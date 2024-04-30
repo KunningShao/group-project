@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movvie</title>
+    <style>
+        /* 父容器设置为 Flex 容器 */
+        .images-container {
+            display: flex;
+            justify-content: center; /* 水平居中对齐 */
+        }
+        .image-container {
+            margin-right: 20px; /* 可选：添加右边距，以分隔不同图片 */
+        }
+        .movie-title {
+            text-align: center; /* 让文本居中对齐 */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Movvie</h1>
+    </header>
+    <!-- 将图片容器放在一个父容器中 -->
+    <div class="images-container">
+        {% for movie in movies %}
+        <div class="image-container">
+            <img src="{{ movie[1] }}" alt="{{ movie[0] }}" width="200" height="300">
+            <p class="movie-title">{{ movie[0] }}</p>
+            <!-- Debug Output -->
+            <p>Movie Title: {{ movie[0] }}</p>
+            <p>Image URL: {{ movie[1] }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
+
+
+
+
